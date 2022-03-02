@@ -17,6 +17,12 @@ func init() {
 }
 
 func main() {
+	if brandID == "" {
+		log.Fatal("no brand id specified")
+	}
+
+	log.Printf("starting batch job with brand %s", brandID)
+
 	client := shopstyle.New(apiKey)
 
 	response, err := client.GetProducts(40, 0, shopstyle.WithBrandFilter(brandID))
