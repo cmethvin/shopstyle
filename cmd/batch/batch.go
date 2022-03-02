@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/cmethvin/shopstyle"
 	"log"
+	"os"
 )
 
 const apiKey = "shopstyle"
@@ -17,6 +18,8 @@ func init() {
 }
 
 func main() {
+	log.Println(os.Args)
+
 	if brandID == "" {
 		log.Fatal("no brand id specified")
 	}
